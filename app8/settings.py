@@ -49,7 +49,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
     
 
 # ALLOWED_HOSTS = ['projet8openclassrooms.herokuapp.com']#!commenter pour heroku 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [192.168.1.5]
 
 
 # Application definition
