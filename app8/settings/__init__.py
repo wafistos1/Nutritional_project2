@@ -15,14 +15,14 @@ import dj_database_url
 import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'ol&r6n+p7x2veeouze8+9v+muuv#a$(31t_0%c#6#f5zdwz)+=') # development key for the moment
+SECRET_KEY = 'ol&r6n+p7x2veeouze8+9v+muuv#a$(31t_0%c#6#f5zdwz)+=' # development key for the moment
 # SECRET_KEY = 'ol&r6n+p7x2veeouze8+9v+muuv#a$(31t_0%c#6#f5zdwz)+=' # development key for the moment
 
 """
@@ -49,7 +49,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
     
 
 # ALLOWED_HOSTS = ['projet8openclassrooms.herokuapp.com']#!commenter pour heroku 
-ALLOWED_HOSTS = [ '192.168.1.5' ]
+ALLOWED_HOSTS = [ ]
 
 
 # Application definition
@@ -74,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -178,8 +179,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 # django_heroku.settings(locals()) # ! decommenter pour les tests
 
 
