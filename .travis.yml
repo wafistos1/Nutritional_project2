@@ -4,7 +4,7 @@ python:
 
 before_script:
   - pip install -r requirements.txt
-  -  psql -c 'p1;' -U postgres
+  -  psql -c 'CREATE DATABASE p1;' -U postgres
   - ALTER user postgres WITH PASSWORD '123';
   - ALTER ROLE postgres SET client_encoding TO 'utf8';
   - ALTER ROLE postgres SET default_transaction_isolation TO 'read committed';
