@@ -4,6 +4,8 @@ python:
 
 before_script:
   - pip install -r requirements.txt
+  - python manage.py makemigrations store register
+  - python manage.py migrate
 
 
 services:
