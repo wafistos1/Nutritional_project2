@@ -4,6 +4,13 @@ python:
 
 before_script:
   - pip install -r requirements.txt
+  - sudo -u postgres psql
+  - CREATE DATABASE p1;
+  - CREATE USER postgres;
+  - ALTER user postgres WITH PASSWORD '123';
+  - ALTER ROLE postgres SET client_encoding TO 'utf8';
+  - ALTER ROLE postgres SET default_transaction_isolation TO 'read committed';
+  - ALTER ROLE postgres SET SET timezone TO 'UTC';
   - python manage.py makemigrations store register
   - python manage.py migrate
 
