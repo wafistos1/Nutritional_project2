@@ -2,7 +2,7 @@
 #
 # Projet8 "Créez une plateforme pour amateurs de Nutella"
 
-
+[![Build Status](https://travis-ci.com/wafistos1/Projet10.svg?branch=master)](https://travis-ci.com/wafistos1/Projet10)
 
 ## Ce programme est un site web qui va aide l'utilisateur a trouvé un produit substitut de meilleure qualité nutritionnelle .
 
