@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 import django_heroku
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -30,6 +32,15 @@ SECRET_KEY = 'ol&r6n+p7x2veeouz12e8+9v+muuv#a$(31t_0%c#6#f5zdwz)+=' # developmen
 >>> "".join([random.choice(string.printable) for _ in range(24)])
 
 """
+# Sentry configure the SDK
+sentry_sdk.init(
+    dsn="https://83d478e741f4470888b293a7cb4277a2@sentry.io/2544798",
+    integrations=[DjangoIntegration()],
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
