@@ -95,6 +95,7 @@ migrations
 Winvenv/
 venOVH/
 app8/settings/production.py
+media/
 
 
 # Spyder project settings
