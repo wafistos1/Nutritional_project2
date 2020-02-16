@@ -1,7 +1,9 @@
 language: python
 python:
   - '3.6.9'
-
+addons:
+  firefox: "49.0"
+  
 before_script:
   - pip install -r requirements.txt
   -  psql -c 'CREATE DATABASE p1;' -U postgres
