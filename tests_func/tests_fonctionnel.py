@@ -6,10 +6,12 @@ from register.models import Profile
 from django.contrib.auth.models import User
 from selenium.webdriver.common.keys import Keys
 import time 
-
+from selenium.webdriver.firefox.options import Options
 
 class MySeleniumTests(LiveServerTestCase):
     def setUp(self):
+        options = Options()
+        options.add_argument('-headless')
         self.selenium = WebDriver()
         self.selenium.implicitly_wait(10)        
         self.user = User.objects.create_user('wafistos4', 'wafi@gmail.com', 'djamel2013')
