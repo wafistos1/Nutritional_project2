@@ -93,6 +93,8 @@ env.bak/
 venv.bak/
 migrations
 Winvenv/
+venOVH/
+app8/settings/production.py
 
 
 # Spyder project settings
