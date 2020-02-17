@@ -17,8 +17,12 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+def trigger_error(request):
+    division_by_zero = 1 / 145
+
 
 urlpatterns = [
+    path('sentry-debug/', trigger_error),
     path('admin/', admin.site.urls),
     path('store/', include('store.urls')),
     path('', include('store.urls')),

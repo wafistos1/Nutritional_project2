@@ -13,7 +13,17 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 import django_heroku
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
+sentry_sdk.init(
+    dsn="https://07a7ab66322b440d90097df5f13cac70@sentry.io/2612389",
+    integrations=[DjangoIntegration()],
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -37,7 +47,7 @@ SECRET_KEY = 'ol&r6n+p7x2veeouz12e8+9v+muuv#a$(31t_0%c#6#f5zdwz)+=' # developmen
 # SECURITY WARNING: don't run with debug turned on in production!
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 # Static files settings
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -51,7 +61,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
     
 
 # ALLOWED_HOSTS = ['projet8openclassrooms.herokuapp.com']#!commenter pour heroku 
-ALLOWED_HOSTS = [ ]
+ALLOWED_HOSTS = [ '127.0.0.1']
 
 
 # Application definition
