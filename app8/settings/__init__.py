@@ -33,14 +33,14 @@ SECRET_KEY = 'ol&r6n+p7x2veeouz12e8+9v+muuv#a$(31t_0%c#6#f5zdwz)+=' # developmen
 
 """
 # Sentry configure the SDK
-sentry_sdk.init(
-    dsn="https://83d478e741f4470888b293a7cb4277a2@sentry.io/2544798",
-    integrations=[DjangoIntegration()],
+# sentry_sdk.init(
+#     dsn="https://83d478e741f4470888b293a7cb4277a2@sentry.io/2544798",
+#     integrations=[DjangoIntegration()],
 
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True
-)
+#     # If you wish to associate users to errors (assuming you are using
+#     # django.contrib.auth) you may enable sending PII data.
+#     send_default_pii=True
+# )
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
