@@ -8,6 +8,7 @@ from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.decorators import login_required
 from store.models import Product, Favorite
 import logging
+from sentry_sdk import capture_message, capture_exception
 
 # Global variable
 query = None
@@ -33,6 +34,7 @@ def resultats(request, page=1):
     global query
     if request.GET.get('q') is not None:
         query = request.GET.get('q').capitalize()
+        capture_message(query)
         
     try:
         data = Product.objects.filter(name__contains=query)
@@ -47,12 +49,14 @@ def resultats(request, page=1):
                 )
         paginator = Paginator(best_product, 15)
         best_product = paginator.page(page)
-    except IndexError:
+    except IndexError as e:
         send_text = _("Essayez un autre produit.")
+        capture_exception(e)
         produit = query
         return render(request, 'store/home.html', {'text': send_text, 'produit': produit})
     except EmptyPage:
         paginator = paginator.page(paginator.num_pages)
+        
     return render(request, 'store/resultats.html', {'data': data[0], 'best_product': best_product})
 
 
