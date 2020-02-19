@@ -7,14 +7,22 @@ from django.utils.translation import ugettext as _
 from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.decorators import login_required
 from store.models import Product, Favorite
+import logging
 
 # Global variable
 query = None
+logger = logging.getLogger(__name__)
 
 
 def home(request):
     """Displays the main page.
     """
+    logger.info('New search', exc_info=True, extra={
+        # Optionally pass a request and we'll grab any information we can
+        'request': request,
+        
+        
+    })
     return render(request, 'store/home.html')
 
 
@@ -25,6 +33,7 @@ def resultats(request, page=1):
     global query
     if request.GET.get('q') is not None:
         query = request.GET.get('q').capitalize()
+        
     try:
         data = Product.objects.filter(name__contains=query)
         best_product = Product.objects.filter(
