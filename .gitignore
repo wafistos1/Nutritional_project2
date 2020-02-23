@@ -114,3 +114,4 @@ media/
 files_variable.txt
 .vscode/
 app8/settings/production.py
+envWin/

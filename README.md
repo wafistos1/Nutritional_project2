@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.com/wafistos1/Projet10.svg?branch=master)](https://travis-ci.com/wafistos1/Projet10)
 
-## Ce programme est un site web qui va aide l'utilisateur a trouvé un produit substitut de meilleure qualité nutritionnelle .
+## Ce programme est un site web qui va aider l'utilisateur a trouvé un produit substitut de meilleure qualité nutritionnelle .
 
 ## Pour commencer
 - Ce programme se compose des éléments suivants
@@ -27,7 +27,7 @@ Pour lancer le programme pour la premier fois:
 
 ### Partie Interface(interaction avec l'utilisateur)
 
-- Le programme aide l'utilisateur a trouvé un produit substitut de meilleure qualité nutritionnelle, on lance la recherche d'un produit et le programme nous affiche le produit avec d'autres produit substitut qui a un meilleur grade nutritionnel.    
+- Le programme aide l'utilisateur a trouvé un produit substitut de meilleure qualité nutritionnelle, on lance la recherche d'un produit et le programme nous affiche le produit avec d'autres produits substituts qui ont un meilleur grade nutritionnel.    
 
 ### Partie recherchent de produit.
 
